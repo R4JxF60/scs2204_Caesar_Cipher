@@ -32,9 +32,24 @@ object ceasarCipher {
     }
 
     // cipher 
-    def cipher(string: String, shifts: Int, method: Char): String = method match {
-        case 'e' => encription(string, shifts)
-        case 'd' => decription(string, shifts)
+    def cipher(method: Char): Unit = method match {
+        case 'e' => {
+            print("                          Message : ")
+            var message: String = readLine()
+            print("                           Shifts : ")
+            var shifts: Int = readInt()
+            println("                Encripted message : "+encription(message, shifts))
+        }
+        case 'd' => {
+            print("                          Message : ")
+            var message: String = readLine()
+            print("                           Shifts : ")
+            var shifts: Int = readInt()
+            println("                Decripted message : "+decription(message, shifts))
+        }
+        case _ => {
+            println("                            Input : Invalid")
+        }
     }
     
     // drive function for the code
@@ -44,24 +59,6 @@ object ceasarCipher {
         println("             For decription press : d")
         print("                            Input : ")
         var method: Char = readChar()
-        method match {
-            case 'e' => {
-                print("                          Message : ")
-                var message: String = readLine()
-                print("                           Shifts : ")
-                var shifts: Int = readInt()
-                println("                Encripted message : "+encription(message, shifts))
-            }
-            case 'd' => {
-                print("                          Message : ")
-                var message: String = readLine()
-                print("                           Shifts : ")
-                var shifts: Int = readInt()
-                println("                Decripted message : "+decription(message, shifts))
-            }
-            case _ => {
-                println("                            Input : Invalid")
-            }
-        }
+        cipher(method)
     }
 }
