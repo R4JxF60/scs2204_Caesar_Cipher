@@ -5,8 +5,8 @@ object ceasarCipher {
 
     // 65 to 90 capital alphabet
 
-    // encription
-    def encription(msg: String, shifts: Int): String = {
+    // encryption
+    def encryption(msg: String, shifts: Int): String = {
         var upText = msg.toUpperCase();
         return upText.map(c => {
             if('A'.toInt to 'Z'.toInt contains c.toInt) {
@@ -18,9 +18,9 @@ object ceasarCipher {
         })
     }
 
-    // decription
-    def decription(encriptedMsg: String, shifts: Int): String = {
-        var upText = encriptedMsg.toUpperCase();
+    // decryption
+    def decryption(encryptedMsg: String, shifts: Int): String = {
+        var upText = encryptedMsg.toUpperCase();
         return upText.map(c => {
             if('A'.toInt to 'Z'.toInt contains c.toInt) {
                 (((c.toInt - 65)-shifts) % 26)match {
@@ -38,14 +38,14 @@ object ceasarCipher {
             var message: String = readLine()
             print("                           Shifts : ")
             var shifts: Int = readInt()
-            println("                Encripted message : "+encription(message, shifts))
+            println("                Encrypted message : "+encryption(message, shifts))
         }
         case 'd' => {
             print("                          Message : ")
             var message: String = readLine()
             print("                           Shifts : ")
             var shifts: Int = readInt()
-            println("                Decripted message : "+decription(message, shifts))
+            println("                Decrypted message : "+decryption(message, shifts))
         }
         case _ => {
             println("                            Input : Invalid")
@@ -54,9 +54,9 @@ object ceasarCipher {
     
     // drive function for the code
     def main(args: Array[String]): Unit = {
-        println("                    Ceasar Cipher : Encriptor & Decoder")
-        println("             For encription press : e")
-        println("             For decription press : d")
+        println("                    Ceasar Cipher : Encryptor & Decoder")
+        println("             For encryption press : e")
+        println("             For decryption press : d")
         print("                            Input : ")
         var method: Char = readChar()
         cipher(method)
