@@ -39,28 +39,28 @@ object ceasarCipher {
     
     // drive function for the code
     def main(args: Array[String]): Unit = {
-        println("                    Ceasar Cipher : Encriptor & Decoder");
-        println("             For encription press : e");
-        println("             For decription press : d");
-        print("                            Input : ");
-        var method: Char = readChar();
+        println("                    Ceasar Cipher : Encriptor & Decoder")
+        println("             For encription press : e")
+        println("             For decription press : d")
+        print("                            Input : ")
+        var method: Char = readChar()
         method match {
             case 'e' => {
-                print("                          Message : "); 
+                print("                          Message : ")
                 var message: String = readLine();
-                print("                           Shifts : ");
+                print("                           Shifts : ")
                 var shifts: Int = readInt(); 
-                println("                Encripted message : "+encription(message, shifts)); 
+                println("                Encripted message : "+encription(message, shifts))
             }
             case 'd' => {
-                print("                          Message : "); 
+                print("                          Message : ")
                 var message: String = readLine();
-                print("                           Shifts : ");
-                var shifts: Int = readInt(); 
-                println("                Decripted message : "+decription(message, shifts));
+                print("                           Shifts : ")
+                var shifts: Int = readInt()
+                println("                Decripted message : "+decription(message, shifts))
             }
             case _ => {
-                println("                            Input : Invalid");
+                println("                            Input : Invalid")
             }
         }
     }
