@@ -47,14 +47,14 @@ object ceasarCipher {
         method match {
             case 'e' => {
                 print("                          Message : ")
-                var message: String = readLine();
+                var message: String = readLine()
                 print("                           Shifts : ")
-                var shifts: Int = readInt(); 
+                var shifts: Int = readInt()
                 println("                Encripted message : "+encription(message, shifts))
             }
             case 'd' => {
                 print("                          Message : ")
-                var message: String = readLine();
+                var message: String = readLine()
                 print("                           Shifts : ")
                 var shifts: Int = readInt()
                 println("                Decripted message : "+decription(message, shifts))
